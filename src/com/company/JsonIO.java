@@ -31,13 +31,13 @@ public class JsonIO {
     }
 
     public static List<Movies> getMovies() {
-        Map<String, List<Movies>> moviesMap = GSON.fromJson(readJson("movies.json"),
+        Map<String, List<Movies>> movieMap = GSON.fromJson(readJson("movies.json"),
                 new TypeToken<Map<String, List<Movies>>>() {
         }.getType());
 
         List<Movies> movies = new ArrayList<>();
 
-        for (Map.Entry<String, List<Movies>> t : moviesMap.entrySet()) {
+        for (Map.Entry<String, List<Movies>> t : movieMap.entrySet()) {
             movies.addAll(t.getValue());
         }
         return movies;
