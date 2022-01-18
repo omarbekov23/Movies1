@@ -8,8 +8,6 @@ public class FindByMap implements FindAble {
 
     @Override
     public void findMoviesByActor(List<Movies> movies, String actorName)  {
-
-
         movies.stream()
                 .filter(kino -> anonimObject1.test(actorName, kino.getCast()))
                 .forEach(movies1 -> System.out.println("\u001B[32m" + movies1.getName() + "\u001B[0m"));
